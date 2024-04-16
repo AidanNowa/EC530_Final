@@ -1,5 +1,5 @@
-# EC551_Lab1
-Programming Assignment 1 – Logic Synthesis Engine for EC551
+# EC530_Final
+Logic Synthesis Engine API
 
 # Repo Organization
 program1.py -- Contains main function as well as all sub-functions called during the main function
