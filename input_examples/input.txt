@@ -1,0 +1,5 @@
+# Please use one line to define boolean expression
+# Up to 4 variables supported (A,B,C,D) only
+# +/|, */&, ~, and () are supported for expressions
+
+(A & B) | (~C & D) | (A & ~B) | (C & ~D)
