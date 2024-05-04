@@ -203,6 +203,7 @@ def convert_minterms_to_binary(minterms):
 
 #based off minterm value in binary convert to decimal index for summation notation
 def minterms_to_indices(binary_minterms): 
+    #print(binary_minterms)
     indices = []
     for i, minterm in enumerate(binary_minterms):
         count = 0
@@ -404,7 +405,7 @@ def main():
             saved_pos_literals, pos_literals = calculate_saved_literals(pos_expression, minimized_pos, symbols_str)
             print('')
             print('6.) Minimized representation in POS: ', minimized_pos)
-            print('6a.) Number of saved literals in SOP: ', saved_pos_literals)
+            print('6a.) Number of saved literals in POS: ', saved_pos_literals)
 
 
             binary_minterms = convert_minterms_to_binary(minterms)
