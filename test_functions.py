@@ -22,10 +22,10 @@ def test_boolean_expression_to_maxterms():
     assert p1.boolean_expression_to_maxterms(expression, symbols_str) == ['~A & ~B & ~C & ~D', '~A & ~B & C & D', '~A & B & ~C & ~D', '~A & B & C & D'], "Test Success"
 
 def test_canonical_sop():
-    assert minterm_indices == "[1, 2, 5, 6, 8, 9, 10, 11, 12, 13, 14, 15]", "Success"
+    assert str(minterm_indices) == "[1, 2, 5, 6, 8, 9, 10, 11, 12, 13, 14, 15]", "Success"
 
 def test_canonical_pos():
-    assert maxterm_indices == "[0, 3, 4, 7]", "Success"
+    assert str(maxterm_indices) == "[0, 3, 4, 7]", "Success"
 
 def test_min_sop():
     assert str(minimized_sop) == "A | (C & ~D) | (D & ~C)", "Success"
