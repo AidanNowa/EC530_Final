@@ -3,6 +3,7 @@ Logic Synthesis Engine Application
 
 # Repo Organization
 boolean_gui.py -- Contains GUI functionality
+
 program1.py -- Contains main function as well as all sub-functions 
 
 dist/ -- Contains tar.gz folders of the up-to-date implementation that can be downloaded for ease of use. Created when generating the Python package
