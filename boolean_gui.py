@@ -1,8 +1,6 @@
 import tkinter as tk
 import  program1 as p1 #import extract_symbols, boolean_expression_to_minterms, boolean_expression_to_maxterms
 from tkinter import scrolledtext
-from sympy.parsing.sympy_parser import parse_expr
-from sympy import simplify
 from quine_mccluskey.qm import QuineMcCluskey
 
 
@@ -14,6 +12,11 @@ def append_result(text):
 def process_operation(operation):
     expression = input_field.get()
     symbols_str, variable_names = p1.extract_symbols(expression)
+    #append_result(f"{len(variable_names)}")
+    if (len(variable_names) > 4):
+        #append_result(symbols_str)
+        append_result(f"Symbols count greater than 4 not currently supported")
+        return -1
     # functions necessary for basic functions
     minterms = p1.boolean_expression_to_minterms(expression, symbols_str)
     maxterms = p1.boolean_expression_to_maxterms(expression, symbols_str)
@@ -33,7 +36,7 @@ def process_operation(operation):
     pi_string_edit = pi_string.replace("[", '').replace("]", '')
     pi_string_final = pi_string_edit.replace("{", '').replace("}", '')
 
-    result.delete('1.0', tk.END)  # Clear previous results
+    #result.delete('1.0', tk.END)  # Clear previous results
 
     try:
         #expr = parse_expr(expression, evaluate=False)  # Parse the input expression
@@ -88,6 +91,10 @@ def process_operation(operation):
     except Exception as e:
         result.insert(tk.END, f"Error: {str(e)}")
 
+def clear_results():
+    result.delete('1.0', tk.END)
+    
+
 # Setting up the GUI
 root = tk.Tk()
 root.title("Boolean Expression Analyzer")
@@ -118,6 +125,10 @@ for i, op in enumerate(operations):
 # Result display area
 result = scrolledtext.ScrolledText(root, width=80, height=20)
 result.grid(row=row+1, column=0, columnspan=6)
+
+# Clear button in the top right
+clear_button = tk.Button(root, text="Clear", command=clear_results)
+clear_button.grid(row=0, column = 4, sticky = 'ne')
 
 # Run the application
 root.mainloop()

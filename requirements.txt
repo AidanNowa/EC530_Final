@@ -1,0 +1,3 @@
+sympy
+quine_mccluskey
+pytest
