@@ -1,0 +1,2 @@
+sympy
+quine_mccluskey

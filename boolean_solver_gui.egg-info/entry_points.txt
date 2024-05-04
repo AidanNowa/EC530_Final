@@ -1,0 +1,2 @@
+[console_scripts]
+boolean_solver_gui = boolean_solver_gui.main:main_function
