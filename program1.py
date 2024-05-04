@@ -368,6 +368,7 @@ def main():
             print('Boolean Expression:', expression)
         
             symbols_str, variable_names = extract_symbols(expression)
+            print('Symbols_str: ', symbols_str)
             print('')
             print('Variable names: ', variable_names)
             
